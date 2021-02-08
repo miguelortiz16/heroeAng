@@ -1,0 +1,198 @@
+ 
+ 
+ <section class="encuentra " >
+
+     <div class="barra">
+            <div class="container " >
+                <nav class="navbar navbar-dark  justify-content-between navbar-expand-lg bg-transparent">
+                    <a class="navbar-brand" href="#">Amesome <span>Heroes</span></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav w-100 justify-content-end">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Heroes Anteriores </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">¿Como funciona?</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="anunciosdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                   Iniciar  sesion 
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="anunciosdropdown">
+                                      
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contacto</a>
+                                </li>
+            
+                            </ul>
+                    </div>
+                </nav>
+            </div> <!--.container-->
+        </div><!--.barra-->
+ 
+   <div class="container"  *ngFor="let usuario of usuario$ |async" >
+      <div class="row align-items-center text-light" *ngIf="usuario.status===1"  >
+       <div  *ngIf="usuario.id===1" class="card now " style="width:480px; height:480px; margin-top:30px; margin-left:50px; background-color: rgba(0, 23, 77, 0.1);    color: #FFFEFF !important;">
+    <div   class="card-body  ">
+        <p class=" mt-1 card-text text-white text-justify mb-4">Dinos tu opinion sobre </p>
+            <h1 class=" mt-4 card-title display-3 text-white font-weight-bold" style=" font-family: 'Hammersmith One', sans-serif; font-size: 50px; color: #FFFEFF !important;" >{{usuario.name}}?</h1>
+        
+          <p class=" mt-4 card-text text-white text-justify mb-4 mb-5">{{usuario.description}}</p>
+
+
+
+            
+      
+          </div>
+              <h1 class="ml-2 mt-2 card-title display-3 text-white font-weight-bold" style=" font-family: 'Hammersmith One', sans-serif; font-size: 20px; color: #FFFEFF !important;" >Cual es tu voto?</h1>
+        <div class="card-body" style="display: grid;  grid-template-columns: 50% 50%; height:81px;">
+
+          <div  style=" background:#00847F;  text-align:center;" ><a  (click)="onClickLike(usuario.id)"><i  class="bi bi-hand-thumbs-up" style="font-size:48px;  "></i></a></div>
+          <div style=" background:#C67A02;text-align:center;"><a (click)="onClickDisLike(usuario.id)"> <i class="bi bi-hand-thumbs-down" style="font-size:48px;  "></i></a></div>
+        
+        </div>
+
+
+
+        
+        
+        </div>
+                  </div>
+
+
+
+      <div class="row align-items-center text-light" *ngIf="usuario.status===0"  >
+       <div  *ngIf="usuario.id===1" class="card now" style="width: 500px; height:448px; margin-top:30px; margin-left:50px; background-color:  rgba(0, 23, 77, 0.1);   color: #FFFEFF !important;">
+    <div   class="card-body  ">
+        
+            <h1 class=" mt-4 card-title display-3 text-white font-weight-bold" style=" font-family: 'Hammersmith One', sans-serif; font-size: 30px; color: #FFFEFF !important;" > <i *ngIf="usuario.StatusIcon==1" class="bi bi-hand-thumbs-up-fill m-2"  style="font-size:80px; background:#00847F; height:100px; weight:100px"></i><i *ngIf="usuario.StatusIcon==0;" class="bi bi-hand-thumbs-down-fill" style="font-size:80px; background:#C67A02; height:100px; weight:100px"></i> Marvel -{{usuario.name}}</h1>
+          <h1 class=" mt-4 card-title display-3 text-white font-weight-bold" style=" font-family: 'Hammersmith One', sans-serif; font-size: 45px; color: #FFFEFF !important;" > Tu voto ha sido resgistrado</h1>
+        
+          <p class=" mt-4 card-text text-white text-justify  mb-2"> <span>{{usuario.description}}</span></p>
+
+
+
+            
+      
+          </div>
+
+        <div class="card-body" >
+
+             <a (click)="statusHero(usuario.id)" class="btn   text-center text-white border  mb-2" style=" border: 1px solid white; weight:200px; height:41px;  margin-left:150px;" ><< Volver a votar </a>
+        </div>
+
+
+
+        
+        
+        </div>
+                  </div>             
+         <div style="display: grid; 
+          grid-template-columns: {{usuario.percentageLike}}% {{usuario.percentageDisLike}}%;  margin-top:135px; "  *ngIf="usuario.id===1">
+          <div  style=" weight:auto; text-align:right; height:40px !important; background:#00847F; filter:alpha(opacity=60); opacity:.6;"><a   style="font-size:30px; color:white;"><i  class="bi bi-hand-thumbs-up" style="font-size:30px;  "></i> {{usuario.percentageLike}}% </a></div>
+          <div style="  weight:auto; text-align:left; height:40px !important; background:#C67A02; filter:alpha(opacity=60); opacity:.6;"><a style="font-size:30px; color:white;" >  {{usuario.percentageDisLike}}% <i class="bi bi-hand-thumbs-down" style="font-size:30px;  "></i></a></div>
+        
+
+      </div>
+       </div>
+    
+    
+    </section>
+             <br>
+
+
+    <div class="card  cardfinish" style="height:110px; background:#ECECEC;"> 
+  <div class="row">
+  <div class="col-4 col-md-4 text-center mt-2">
+ 
+  
+  <span style="font-size:20px;"> Lorem Ipsum is </span>
+  <br>
+     <strong style="font-size:20px;"> Lorem Ipsum is </strong>
+  </div>
+  <div class="col-7 col-md-6 mt-3"><p class=" text-justify cardfinish">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry' </p> </div>
+
+ <div class="col-1  col-md-2 mt-3"><i style="font-size:20px; margin-top:40px;" class="bi bi-x text-right "></i></div>
+
+</div>
+  
+</div>
+
+    <section class="container mt-5">
+        <h2 class="text-left mb-5">Super heroes anteriores </h2>
+
+        <div class="row anuncios" >
+            <div class="col-md-6 mb-5"  *ngFor="let usuario of usuarios$ |async" >
+
+            <div  >
+                    <div    class="card"  style="background-image: url({{usuario.image}});   background-repeat: no-repeat;  background-size: cover;  background-position: center; height: 600px;  weight: 600px; margintop:0px;">
+                        
+                        <div  class="card-body" style="margin-top:250px; margin-left:39px" >
+                            <h3 class="card-title display-3 text-white font-weight-bold" style=" font-family: 'Hammersmith One', sans-serif; font-size: 45px;" >{{usuario.name}}</h3>
+                            <h3 class="card-text text-white text-justify mb-4">{{usuario.description}}</h3>
+                        
+
+                            
+                            <a href="#" class="btn   text-center text-white border w-25  mb-2" style=" border: 1px solid white; weight:auto; height:auto;" [routerLink]="'/usuario/'+usuario.id">Ver Detalle</a>
+                      
+                      
+ 
+                        </div>
+               <div style="display: grid;
+               grid-template-columns:{{usuario.percentageLike}}% {{usuario.percentageDisLike}}%;  ">
+               <div  style=" color:white;  font-size: 30px; weight:auto; height:40px !important; background:#00847F; filter:alpha(opacity=60); opacity:.6;"><a><i  class="bi bi-hand-thumbs-up" style="font-size:25px;  "></i></a>  {{usuario.percentageLike}}%</div>
+               <div   style="color:white  !important; text-align:right;  font-size: 30px; weight:auto; height:40px !important; background:#C67A02; filter:alpha(opacity=60); opacity:.6;"> {{usuario.percentageDisLike}}% <i class="bi bi-hand-thumbs-down  mb-1" style="font-size:25px;   ">  </i></div>
+  
+
+               </div>
+                </div><!--.card-->
+                       <br>
+       
+                    </div>
+                                      
+            </div> <!--.col-md-4-->
+            
+           
+         
+            
+
+
+        </div><!--.row-->
+    </section><!--.container-->
+   
+
+   
+
+  
+
+    <footer class="footer  mt-5">
+
+
+        <div class="container">
+            <div class="row py-4 align-items-center">
+                <ul class="nav col  flex-column flex-sm-row text-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">Terminos y Condiciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">Politica de tratamiento de tados</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">Contacto</a>
+                    </li>
+                </ul>
+
+                <p class="copyright  m-0 col-md-4 text-center text-md-right mt-4 mt-md-0">
+                        Siguenos <i class="bi bi-facebook btn-lg fa-2x"   style="font-size:48px; " ></i> <i class="bi bi-twitter btn-lg"  style="font-size:48px;"></i>
+     
+                </p>
+            </div>
+        </div>
+
+    </footer>

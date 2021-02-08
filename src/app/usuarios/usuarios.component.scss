@@ -1,0 +1,198 @@
+:root {
+    --primario: #71b100;
+    --secundario: #e08709;
+}
+body {
+    font-family: 'Lato', sans-serif;
+}
+h1,h2,h3 {
+    font-weight: 300;
+}
+.barra {
+    background-color: #71b100;
+}
+@media (min-width: 768px) {
+    .barra {
+        background-color: transparent;
+    }
+    .header {
+        position: relative;
+    }
+    .header .barra {
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+    }
+}
+.navbar-nav a {
+    text-transform: uppercase;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+    font-size: .8rem;
+}
+.dropdown-menu {
+    background-color: #71b100;
+}
+.dropdown-menu .dropdown-item {
+    color: white;
+}
+.dropdown-menu .dropdown-item:hover {
+    background-color: #e08709;
+}
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: 300;
+}
+.navbar-brand span {
+    font-weight: 900;
+}
+.carousel-caption h3 {
+    font-size: 2.4rem;
+}
+.bloque-info p { font-size: 1.4rem; }
+.bg-success {
+    background-color: #71b100!important;
+}
+.btn-warning {
+    background-color: #e08709;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    border-color: #e08709;
+}
+/*** Nosotros **/
+.sobre-nosotros h3 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+/** Anuncios **/
+.anuncios .card {
+    margin-bottom: 2rem;
+}
+.card-precio {
+    color: #71b100;
+}
+.card-descripcion img{
+   margin-right: .5rem;
+}
+/** Encuentra **/
+.encuentra {
+    background-image: url("https://fsa.zobj.net/crop.php?r=OVG1V2urfZgyq7XkQHZ55F8-LWFhoSCG4LAWXtTBBRubW_HzWXhRismsHcHuFLqnIs_ZnZq5mCD_kDzpaEydl69iIz2FCRYx23BCbNLCz3_QKfJ-PHfTzrUxlMyLRmHNDcIuxJwk-XUYg1v_");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 650px;
+    weight: 650px;
+}
+.encuentra .container .row{
+    height: 25rem;
+}
+.encuentra h3 {
+    font-size: 2.2rem;
+    font-weight: 900;
+}
+/** Blog **/
+
+.entrada h3::after {
+    content: '';
+    display: block;
+    width: 8rem;
+    height: .2rem;
+    background-color: #71b100;
+    clear: both;
+    margin-top: .5rem;
+}
+.entrada span {
+    color: #e08709;
+}
+.btn-success {
+   background-color:  #71b100;
+   text-transform: uppercase;
+   font-weight: 700;
+}
+.btn-success:hover {
+    background-color: #639c02;
+}
+/** Testimoniales **/
+.testimoniales {
+    background-color: #71b100;
+}
+.testimoniales .testimonial-texto::before {
+    content: open-quote;
+    font-size: 4rem;
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    font-weight: 900;
+}
+.testimoniales .carousel-item {
+    padding-left: 2rem;
+}
+.testimoniales .testimonial-texto {
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 2.6rem;
+}
+.testimoniales span {
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+/** Footer **/
+.bg-dark {
+    background-color: #333333!important;
+}
+.footer .nav-link {
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.entrada {
+padding:2px;
+height:12000px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+
+
+
+
+a:hover {
+  cursor:pointer;
+
+}
+
+
+
+
+  @media (max-width: 778px) {
+ .now{
+      width:auto;
+      height:auto;
+      margin-left:10px !important;
+  }
+}
+
+
+  @media (max-width: 527) {
+ .now{
+      width:100px;
+      height:100px;
+      margin-left:1px !important;
+  }
+
+   .cardfinish{
+font-size:5px;
+
+  }
+}
+
+  @media (max-width: 375) {
+ .now{
+      width:50;
+      height:50px;
+      margin-left:0px !important;
+  }
+
+
+}
