@@ -1,0 +1,18 @@
+<br>
+<button  [routerLink]="'/heroes'" class="btn btn-primary"> Ir ala vistas Principal </button>
+<br>
+<hr>
+<div class="row" *ngIf="heroe$|async ; let heroe">
+  <div class="col-4">
+  <img   [src]="heroe.image" class="img-fluid">
+
+  </div>
+  <div class="col-8">
+ <h2>{{heroe.name}}</h2>
+    <p>{{heroe.description}}</p>
+     <p>Me gusta:{{heroe.counterLike}}</p>
+  <p>No me gusta:{{heroe.counterDislike}}</p>
+  </div>
+
+</div>
+
